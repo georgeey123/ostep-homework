@@ -9,7 +9,7 @@ int main(int argc, char *argv[]){
   int x = 1;
 
   int temp = x + 99;
-  printf("Value before fork: %d", temp);
+  printf("Value before fork: %d\n", temp);
   int rc = fork();
   
   if (rc < 0){
