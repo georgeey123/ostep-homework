@@ -18,12 +18,11 @@ int main(int argc, char *argv[]){
   if (rc < 0){
     fprintf(stderr, "fork failed\n");
   } else if (rc ==0){
-    
     printf("file descriptor from child: %d\n", fd);
 
-    printf("writing to opened via child file\n");
+    printf("writing to opened via child file:\n");
     
-    const char *text = "writing from child process to file";
+    const char *text = "writing from child process to file this is to mak ethis long and unpredictable woahhhh";
     ssize_t bytesWritten = write(fd, text, strlen(text));
     
     if (bytesWritten == -1){
@@ -37,9 +36,9 @@ int main(int argc, char *argv[]){
   } else{
     printf("file descriptor from parent %d\n", fd);
 
-    printf("writing to opened file from parent\n");
+    printf("writing to opened file from parent:\n");
 
-    const char *text = "writing from parent to file\n";
+    const char *text = "writing from parent to file. damn what am i doing? i hope the offests are noticable mannnnnn\n";
     ssize_t bytesWritten = write(fd, text, strlen(text));
 
     if (bytesWritten == -1){
