@@ -14,9 +14,11 @@ int main (int argc, char *argv[]){
     exit(1);
   } else if (rc == 0){
     printf("printing from child\n");
-  } else{
     wait(NULL);
-    printf("did child close first?");
+  } else{
+//    int res = wait(NULL);
+    printf("did child close first?\n");
+ //   printf("wait returns: %d\n", res);
   }
 
   return 0;
